@@ -1,10 +1,11 @@
 import React from 'react';
+import Onboarding1 from './pages/onboarding1';
 
 
 export default function App() {
   return (
     <>
-     <div>Show code here</div>
+      <Onboarding1 />
     </>
   );
 }
