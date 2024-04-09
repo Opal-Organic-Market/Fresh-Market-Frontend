@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import Poulet from "../assets/images/Poulet.jpg";
 import Pouletillustration from "../assets/images/pouletIllustration.jpg";
+import Typography from '@material-ui/core/Typography';
 
 const Onboarding1 = ({}) => {
   return (
@@ -26,11 +27,11 @@ const Onboarding1 = ({}) => {
         >
           <img src={Pouletillustration} alt="" />
           <img src={Poulet} alt="chicken"/>
-          <h3>Grands evenements en approach?</h3>
-          <p>
+          <Typography>Grands evenements en approach?</Typography>
+          <Typography>
             Fini les tracas de derniere minute ! Passez vos commandes a l'avance
             pour des mariages, evenements d'entreprises entre autres.
-          </p>
+          </Typography>
         </div>
       </Box>
     </div>

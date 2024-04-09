@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Commandesillustration from "../assets/images/commandesIllustration.png";
+import Boeuf from "../assets/images/Boeuf.png";
+
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -25,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#013438',
   },
-  logo: {
+  boeuf: {
     width: 260,
     height: 260,
     position: 'absolute',
@@ -52,7 +54,8 @@ export default function Onboaring2() {
 
   return (
     <div className={classes.page}>
-      <img src={Commandesillustration} alt="logo" className={classes.logo} />
+      {/* <img src={Logo} alt="logo" className={classes.logo} /> */}
+      <img src={Boeuf} alt="logo" className={classes.boeuf} />
       <Typography className={classes.textbox}>
         Digitalisons le terroir au service de toutes les tables
       </Typography>
