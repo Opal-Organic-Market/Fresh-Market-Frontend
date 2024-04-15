@@ -1,51 +1,41 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Commandesillustration from "../assets/images/commandesIllustration.png";
 import Boeuf from "../assets/images/Boeuf.png";
-
 
 const useStyles = makeStyles((theme) => ({
   page: {
     width: 390,
     height: 844,
-    position: 'absolute',
-    top: 432,
-    left: 307,
-    background: '#FFFFFF',
-  },
-  textbox: {
-    width: 342,
-    height: 64,
-    position: 'absolute',
-    top: 358,
-    left: 24,
-    font: 'Droid Sans',
-    fontSize: '20px',
-    fontWeight: '400',
-    lineHeight: '25px',
-    textAlign: 'center',
-    color: '#013438',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 'auto', // Center the page horizontally
   },
   boeuf: {
-    width: 260,
-    height: 260,
-    position: 'absolute',
-    top: 87,
-    left: 65,
+    width: '278',
+    height: '278',
   },
-  text: {
-    width: 342,
-    height: 18,
-    position: 'absolute',
-    bottom: 50, // adjust as needed
-    left: 24,
+  productname: {
+    width: '342',
+    height: '80',
+    fontWeight: '700',
     font: 'Droid Sans',
-    fontSize: '14px',
-    fontWeight: '400',
-    lineHeight: '17.5px',
+    fontSize: '32px',
+    lineHeight: '40px',
     textAlign: 'center',
     color: '#013438',
+  },
+  productdescription: {
+    width: '342',
+    height: '72',
+    font: 'Droid Sans',
+    fontSize: '16px',
+    fontWeight: '400',
+    lineHeight: '24px',
+    textAlign: 'center',
+    color: '#797A7B',
   },
 }));
 
@@ -54,13 +44,14 @@ export default function Onboaring2() {
 
   return (
     <div className={classes.page}>
-      {/* <img src={Logo} alt="logo" className={classes.logo} /> */}
-      <img src={Boeuf} alt="logo" className={classes.boeuf} />
-      <Typography className={classes.textbox}>
-        Digitalisons le terroir au service de toutes les tables
+      <img src={Boeuf} alt="Boeuf" className={classes.boeuf} />
+      <br></br>
+      <Typography className={classes.productname}>
+        Commandes sur mesure.
       </Typography>
-      <Typography className={classes.text}>
-        Avez-vous déjà un compte ?
+      <br></br>
+      <Typography className={classes.productdescription}>
+        Aurevoir la calculette ! Donnez-nous le nombre de consommateurs de nos produits et l’appli fera une estimation du coût pour vous.
       </Typography>
     </div>
   );

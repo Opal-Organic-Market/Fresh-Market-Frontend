@@ -5,6 +5,8 @@ import Image1 from '../assets/images/Image1.png';
 import Rawmeat from '../assets/images/rawmeat.png';
 import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
+import { Theme } from '@emotion/react';
+
 
 const useStyles = makeStyles({
   container: {
@@ -72,15 +74,31 @@ const useStyles = makeStyles({
     border: 'none',
     cursor: 'pointer',
     padding: '8px 0',
-  }
+  },
+  headerlabel: {
+    fontFamily: 'Droid Sans',
+    fontSize: '18px',
+    fontWeight: '400',
+    lineHeight: '20px',
+    textAlign: 'left',
+    color: '#CF1B26',
+},
+root: {
+    flexGrow: '1',
+    padding: 'theme.spacing',
+    // [theme.breakpoints.down('sm')]: {
+    padding: 'theme.spacing(1)',
+    // }
+}
 });
 
-export default function AccueilTypedeviande() {
+export default function AccueilTypedeviandeLivraison() {
   const classes = useStyles();
 
   return (
     <div>
       <img src={Intrologo} alt="" className={classes.logo} />
+      <div className= {classes.headerlabel}>Livraison en cours ...</div>
       <div className={classes.sectionheader}>Que desirez-vous?</div>
       <div className={classes.container}>
         <Card className={classes.card}>
