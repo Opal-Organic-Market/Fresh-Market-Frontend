@@ -6,8 +6,17 @@ import Rawmeat from '../assets/images/rawmeat.png';
 import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   container: {
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '70%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '100%',
+    },
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)', 
     padding: '25px',
@@ -15,7 +24,7 @@ const useStyles = makeStyles({
   },
   card: {
     width: '120px',
-    height: '180px',
+    minheight: '100vh',
     borderRadius: '8px',
     padding: '10px',
     paddingBottom: '25px',
@@ -73,7 +82,7 @@ const useStyles = makeStyles({
     cursor: 'pointer',
     padding: '8px 0',
   }
-});
+}));
 
 export default function AccueilTypedeviande() {
   const classes = useStyles();

@@ -28,8 +28,6 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '30px',
     textAlign: 'left',
     color: '#045E98',
-
-
   }
   
 }));

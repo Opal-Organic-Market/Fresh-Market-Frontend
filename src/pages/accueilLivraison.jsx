@@ -5,11 +5,16 @@ import Image1 from '../assets/images/Image1.png';
 import Rawmeat from '../assets/images/rawmeat.png';
 import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
-import { Theme } from '@emotion/react';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   container: {
+    [theme.breakpoints.down('md')]: {
+      width: '100%'
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '70%'
+    },
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)', 
     padding: '25px',
@@ -83,14 +88,7 @@ const useStyles = makeStyles({
     textAlign: 'left',
     color: '#CF1B26',
 },
-root: {
-    flexGrow: '1',
-    padding: 'theme.spacing',
-    // [theme.breakpoints.down('sm')]: {
-    padding: 'theme.spacing(1)',
-    // }
-}
-});
+}))
 
 export default function AccueilTypedeviandeLivraison() {
   const classes = useStyles();

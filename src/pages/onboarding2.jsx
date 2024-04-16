@@ -5,17 +5,24 @@ import Boeuf from "../assets/images/Boeuf.png";
 
 const useStyles = makeStyles((theme) => ({
   page: {
-    width: 390,
-    height: 844,
+    [theme.breakpoints.down('md')]: {
+      width: '100%'
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '70%',
+      margin: '0 auto'
+    },
+    minheight: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    margin: 'auto', // Center the page horizontally
+   
   },
   boeuf: {
     width: '278',
-    height: '278',
+    height: 278,
+
   },
   productname: {
     width: '342',

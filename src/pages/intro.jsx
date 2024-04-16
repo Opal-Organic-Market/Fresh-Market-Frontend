@@ -5,19 +5,23 @@ import Logo from '../assets/images/intrologo.jpg';
 
 const useStyles = makeStyles((theme) => ({
   page: {
-    width: 390,
-    height: 844,
-    position: 'absolute',
-    top: 432,
-    left: 307,
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '70%',
+      margin: '0 auto'
+    },
+    minHeight: '100vh',
     background: '#FFFFFF',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   textbox: {
     width: 342,
     height: 64,
-    position: 'absolute',
-    top: 358,
-    left: 24,
     font: 'Droid Sans',
     fontSize: '20px',
     fontWeight: '400',
@@ -27,17 +31,11 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     width: 260,
-    height: 260,
-    position: 'absolute',
-    top: 87,
-    left: 65,
+    // height: 260,
   },
   text: {
     width: 342,
     height: 18,
-    position: 'absolute',
-    bottom: 50, // adjust as needed
-    left: 24,
     font: 'Droid Sans',
     fontSize: '14px',
     fontWeight: '400',

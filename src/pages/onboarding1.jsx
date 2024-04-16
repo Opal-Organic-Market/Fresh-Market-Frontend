@@ -5,11 +5,17 @@ import Poulet from "../assets/images/Poulet.jpg";
 
 const useStyles = makeStyles((theme) => ({
   page: {
-    width: 390,
-    height: 844,
+    [theme.breakpoints.down('md')]: {
+      width: '100%'
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '70%',
+      margin: '0 auto'
+    },
+    minheight: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
     margin: 'auto', // Center the page horizontally
   },
