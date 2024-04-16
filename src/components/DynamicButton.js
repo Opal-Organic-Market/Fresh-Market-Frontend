@@ -4,31 +4,28 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   root: {
-    boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '14px 16px',
-    width: '86px',
-    height: '36px',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
-    borderRadius: '6px',
+    alignItems: 'flex-start',
+    padding: '8px',
+    gap: '4px',
+    width: '147px',
+    height: '35px',
+    borderRadius: '24px',
   },
   label: {
-    width: '54px',
-    height: '20px',
+    width: '131px',
+    height: '19px',
     fontFamily: 'Droid Sans',
     fontStyle: 'normal',
-    fontWeight: '400',
-    fontSize: '14px',
-    lineHeight: '20px',
+    fontWeight: '700',
+    fontSize: '15px',
+    lineHeight: '125%',
     textAlign: 'center',
-    color: '#252425',
   },
 });
 
-export default function Modifier() {
+export default function DynamicButton({ name }) {
   const classes = useStyles();
   const [buttonState, setButtonState] = useState('default');
 
@@ -40,23 +37,22 @@ export default function Modifier() {
     setButtonState('default');
   };
 
-  const handleMouseDown = () => {
-    setButtonState('active');
-  };
-
-  const handleMouseUp = () => {
-    setButtonState('default');
+  const handleClick = () => {
+    setButtonState('click');
   };
 
   const buttonStyles = {
     default: {
-      background: '#FFFFFF',
+      background: '#CF1B26',
+      color: '#FFFFFF',
     },
     hover: {
-      background: '#CDDFEB',
+      background: '#E73843',
+      color: '#FFFFFF',
     },
-    active: {
-      background: '#3500A5',
+    click: {
+      background: '#CDDFEB',
+      color: '#045E98',
     },
   };
 
@@ -65,11 +61,10 @@ export default function Modifier() {
       className={classes.root}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
+      onClick={handleClick}
       style={buttonStyles[buttonState]}
     >
-      <span className={classes.label}>Modifier</span>
+      <span className={classes.label} style={{color: buttonStyles[buttonState].color}}>{name}</span>
     </Button>
   );
 }

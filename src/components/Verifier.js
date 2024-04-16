@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import TuneIcon from '@material-ui/icons/Tune';
 
 const useStyles = makeStyles({
   root: {
@@ -9,26 +10,31 @@ const useStyles = makeStyles({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '14px 16px',
+    padding: '0px 8px',
+    gap: '8px',
     width: '86px',
     height: '36px',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
-    borderRadius: '6px',
+    border: '1px solid #363939',
+    borderRadius: '4px',
   },
   label: {
-    width: '54px',
-    height: '20px',
+    width: '46px',
+    height: '18px',
     fontFamily: 'Droid Sans',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '14px',
-    lineHeight: '20px',
+    lineHeight: '125%',
     textAlign: 'center',
-    color: '#252425',
+    color: '#363939',
+  },
+  icon: {
+    width: '16px',
+    height: '16px',
   },
 });
 
-export default function Modifier() {
+export default function Verifier() {
   const classes = useStyles();
   const [buttonState, setButtonState] = useState('default');
 
@@ -53,7 +59,7 @@ export default function Modifier() {
       background: '#FFFFFF',
     },
     hover: {
-      background: '#CDDFEB',
+      background: '#E2EEF7',
     },
     active: {
       background: '#3500A5',
@@ -69,7 +75,8 @@ export default function Modifier() {
       onMouseUp={handleMouseUp}
       style={buttonStyles[buttonState]}
     >
-      <span className={classes.label}>Modifier</span>
+      <TuneIcon className={classes.icon} />
+      <span className={classes.label}>Vérifier</span>
     </Button>
   );
 }
