@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     width: 342,
-    height: 18,
+    // height: 18,//uncomment this
     font: 'Droid Sans',
     fontSize: '14px',
     fontWeight: '400',
