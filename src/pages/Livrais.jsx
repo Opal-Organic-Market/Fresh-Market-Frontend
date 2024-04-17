@@ -1,6 +1,7 @@
-import { makeStyles } from '@material-ui/core';
-import React from 'react';
-import { IconButton } from '@mui/material'; 
+import { Typography, makeStyles } from "@material-ui/core";
+import React from "react";
+import SearchBar from "../components/SearchBar";
+
 
 
 const useStyles = makeStyles({
@@ -20,7 +21,13 @@ export default function Livraison() {
 const styles = useStyles
 
   return (
+
+    <>
     <h3 className={styles.topography}>Commandes</h3>
+    <SearchBar/>
+    <Typography>Les 3 derneirs mois</Typography>
+  
+    </>
   
   )
 }

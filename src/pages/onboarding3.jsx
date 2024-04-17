@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Porc from "../assets/images/Porc.png";
+import Continuer from "../components/Continuer";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -58,6 +60,12 @@ export default function Onboarding3() {
       <Typography className={classes.text}>
         Nous prenons soin de vous ! Service de livraison fiable et efficient et service après vente à l'écoute
       </Typography>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Link to="/Welcome">
+      <Continuer/>
+      </Link>
     </div>
   );
 }

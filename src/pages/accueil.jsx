@@ -5,6 +5,9 @@ import Image1 from '../assets/images/Image1.png';
 import Rawmeat from '../assets/images/rawmeat.png';
 import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
+import Continuer from "../components/Continuer";
+import { Link } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -119,7 +122,12 @@ export default function AccueilTypedeviande() {
             <button className={classes.buttontext}>Viande de Lapin</button>
           </div>
         </Card>
-        <button className={classes.buttonlabel}>Je simule un devis</button>
+        <br></br>
+      <br></br>
+      <br></br>
+      <Link to="/AccueilTypedeviandeLivraison">
+      <Continuer/>
+      </Link>
       </div>
     </div>
   );
