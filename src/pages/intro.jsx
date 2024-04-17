@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Logo from '../assets/images/intrologo.jpg';
+import { Link } from 'react-router-dom';
+import Allons from '../components/Allons';
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -54,9 +56,16 @@ export default function Intro() {
       <Typography className={classes.textbox}>
         Digitalisons le terroir au service de toutes les tables
       </Typography>
+      <br></br>
+      <Link to="/onboarding1">
+      <Allons/>
+      </Link>
       <Typography className={classes.text}>
         Avez-vous déjà un compte ?
       </Typography>
+    
+      
+      
     </div>
   );
 }

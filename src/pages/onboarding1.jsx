@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Poulet from "../assets/images/Poulet.jpg";
+import Suivant from "../components/Suivant";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -50,15 +52,32 @@ export default function Onboaring2() {
 
   return (
     <div className={classes.page}>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <img src={Poulet} alt="Boeuf" className={classes.boeuf} />
+      <br></br>
+      <br></br>
       <br></br>
       <Typography className={classes.productname}>
       Grands événements en approche ? 
       </Typography>
       <br></br>
+      <br></br>
+      
       <Typography className={classes.productdescription}>
       Fini les tracas de dernière minute ! Passez vos commandes à l’avance pour des mariages, événements d’entreprises entre autres. 
       </Typography>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Link to="/Onboarding2">
+      <Suivant/>
+      </Link>
     </div>
   );
 }

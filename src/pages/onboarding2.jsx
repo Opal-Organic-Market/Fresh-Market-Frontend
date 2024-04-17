@@ -2,6 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Boeuf from "../assets/images/Boeuf.png";
+import { Link } from 'react-router-dom';
+import Suivant from "../components/Suivant";
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -17,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
+    margin: 'auto', // Center the page horizontally
+
    
   },
   boeuf: {
@@ -60,6 +67,11 @@ export default function Onboaring2() {
       <Typography className={classes.productdescription}>
         Aurevoir la calculette ! Donnez-nous le nombre de consommateurs de nos produits et l’appli fera une estimation du coût pour vous.
       </Typography>
+      <br></br>
+      <br></br>
+      <Link to="/Onboarding3">
+      <Suivant/>
+      </Link>
     </div>
   );
 }
