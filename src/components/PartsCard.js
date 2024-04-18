@@ -69,7 +69,7 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    flexGrow: 1, // Add this line
+    // flexGrow: 1, // Add this line
   },
   image: {
     maxWidth: '100%',

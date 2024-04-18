@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import CheckIcon from '@material-ui/icons/Check';
 import { useSpring, animated } from 'react-spring';
+import '../index.css'
 
 const useStyles = makeStyles({
   default: {
@@ -29,6 +30,7 @@ const useStyles = makeStyles({
     fontSize: 15,
     lineHeight: '20px',
     textAlign: 'center',
+    textTransform: 'none'
   },
 });
 
