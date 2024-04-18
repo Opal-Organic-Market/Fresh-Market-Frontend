@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import '../index.css'
 
 const useStyles = makeStyles({
   root: {
@@ -14,19 +15,9 @@ const useStyles = makeStyles({
     height: '48px',
     borderRadius: '32px',
   },
-  label: {
-    width: '58px',
-    height: '20px',
-    fontFamily: 'Droid Sans',
-    fontStyle: 'normal',
-    fontWeight: '700',
-    fontSize: '16px',
-    lineHeight: '125%',
-    textAlign: 'center',
-  },
 });
 
-export default function Suivant() {
+export default function JeSimuleUnDevis() {
   const classes = useStyles();
   const [buttonState, setButtonState] = useState('default');
 
@@ -38,22 +29,16 @@ export default function Suivant() {
     setButtonState('default');
   };
 
-  const handleClick = () => {
-    setButtonState('click');
-  };
-
   const buttonStyles = {
     default: {
-      background: '#CDDFEB',
-      color: '#045E98',
+      background: '#013438',
+      color: '#FFFFFF',
+      textTransform: 'none',
     },
     hover: {
-      background: '#94C4E4',
-      color: '#045E98',
-    },
-    click: {
-      background: '#046A72',
+      background: '#025A60',
       color: '#FFFFFF',
+      textTransform: 'none',
     },
   };
 
@@ -62,10 +47,9 @@ export default function Suivant() {
       className={classes.root}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
       style={buttonStyles[buttonState]}
     >
-      <span className={classes.label} style={{color: buttonStyles[buttonState].color}}>Suivant</span>
+      Je simule un devis
     </Button>
   );
 }
