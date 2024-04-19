@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TuneIcon from '@material-ui/icons/Tune';
+import '../index.css'
 
 const useStyles = makeStyles({
   root: {

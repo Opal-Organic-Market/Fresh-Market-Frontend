@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import '../index.css'
 
 const useStyles = makeStyles({
   container: {
@@ -52,6 +53,7 @@ const useStyles = makeStyles({
     fontSize: '15px',
     lineHeight: '125%',
     textAlign: 'center',
+    textTransform: 'none !important'
   }
 });
 

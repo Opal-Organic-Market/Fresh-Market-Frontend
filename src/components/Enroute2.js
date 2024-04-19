@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import '../index.css'
 
 const useStyles = makeStyles((theme) => ({
   container: {

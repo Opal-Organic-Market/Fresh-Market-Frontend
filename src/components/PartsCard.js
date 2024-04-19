@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CheckIcon from '@material-ui/icons/Check';
 import { useSpring, animated } from 'react-spring';
+import '../index.css'
 
 const useStyles = makeStyles({
   container: {
@@ -14,16 +15,16 @@ const useStyles = makeStyles({
     alignItems: 'center',
     padding: '12px',
     gap: '8px',
-    position: 'absolute',
     width: '166.9px',
     height: '307.19px',
     left: '199.1px',
     top: '0px',
     border: '1px solid #F6F6F6',
     borderRadius: '10px',
+    position: 'relative', // Add this line
   },
   expandIcon: {
-    position: 'absolute',
+    position: 'absolute', // Uncomment this line
     top: '12px',
     right: '12px',
     width: '24px',
@@ -50,8 +51,8 @@ const useStyles = makeStyles({
     borderRadius: 24,
     padding: '14px 24px',
     display: 'flex',
-    flexDirection: 'column', // Ensure this is set to 'column'
-    justifyContent: 'space-between', // Add this line
+    flexDirection: 'column',
+    justifyContent: 'center', // Change this line
     alignItems: 'center',
     gap: 12,
     fontFamily: 'Droid Sans',
@@ -60,20 +61,19 @@ const useStyles = makeStyles({
     fontSize: 15,
     lineHeight: '20px',
     textAlign: 'center',
-    marginTop: 'auto', // Add this line
+    marginTop: 'auto',
   },
   imageContainer: {
     width: '100%',
-    height: 'auto',
-    backgroundColor: '#f0f0f0',
+    height: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // flexGrow: 1, // Add this line
   },
   image: {
     maxWidth: '100%',
     maxHeight: '100%',
+    // objectFit: 'contain', // Add this line
   },
 });
 
@@ -110,10 +110,12 @@ const PartsCard = ({ imageUrl, productName }) => {
 
   return (
     <div className={classes.container}>
+      
+      <div className={classes.imageContainer}>
       <IconButton className={classes.expandIcon} onClick={handleExpandClick}>
         <ExpandMoreIcon style={{ transform: isExpanded ? "rotate(180deg)" : "none" }} />
       </IconButton>
-      <div className={classes.imageContainer}>
+      
         {imageUrl && <img src={imageUrl} alt={productName} className={classes.image}/>}
       </div>
       <animated.div style={props}>
