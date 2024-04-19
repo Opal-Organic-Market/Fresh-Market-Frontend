@@ -5,6 +5,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/Home';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import MenuIcon from '@material-ui/icons/Menu';
+import '../index.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {

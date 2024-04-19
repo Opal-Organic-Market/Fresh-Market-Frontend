@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles, useMediaQuery } from '@material-ui/core';
+import '../index.css'
 
 const useStyles = makeStyles((theme) => ({
   container: {

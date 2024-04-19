@@ -1,11 +1,16 @@
 import React from 'react';
 import { makeStyles, useMediaQuery } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
+import '../index.css'
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   input: {
-    width: (props) => props.inputWidth,
-    height: '48px',
+    width: '70%',
+    height: '5%',
     padding: '14px 36px 14px 16px',
     gap: '8px',
     borderRadius: '8px',
@@ -39,12 +44,14 @@ const SearchBar = () => {
   });
 
   return (
-    <div className={classes.input}>
-      <SearchIcon className={classes.icon} />
-      <input
-        type="text"
-        placeholder= 'Cherchez votre commande'
-      />
+    <div className={classes.container}>
+      <div className={classes.input}>
+        <SearchIcon className={classes.icon} />
+        <input
+          type="text"
+          placeholder= 'Cherchez votre commande'
+        />
+      </div>
     </div>
   );
 };
