@@ -72,6 +72,7 @@ export default function AccueilParties2() {
         <div>
           <img src={pouletthigh} alt="" className={styles.pouletImage} />
           <AilesButton />
+          <Typography>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque voluptas quis illum ea dignissimos, sequi deserunt repellat sunt enim</Typography>
         </div>
         <div>
           <img src={poulet2} alt="" className={styles.pouletImage} />
@@ -98,7 +99,7 @@ export default function AccueilParties2() {
       <br></br>
       <br></br>
       <br></br>
-      <Link to="/AccueilParties2">
+      <Link to="/Estimation1">
       <Continuer/>
       </Link>
       <br></br>
