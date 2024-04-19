@@ -5,6 +5,7 @@ import Image1 from '../assets/images/Image1.png';
 import Rawmeat from '../assets/images/rawmeat.png';
 import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
+import JeSimuleUnDevis from "../components/JeSimuleUnDevis";
 import { Link } from 'react-router-dom';
 
 
@@ -97,7 +98,7 @@ export default function AccueilTypedeviandeLivraison() {
   return (
     <div>
       <img src={Intrologo} alt="" className={classes.logo} />
-      <div className= {classes.headerlabel}>Livraison en cours ...</div>
+      <div className={classes.headerlabel}>Livraison en cours ...</div>
       <div className={classes.sectionheader}>Que desirez-vous?</div>
       <div className={classes.container}>
         <Card className={classes.card}>
@@ -118,7 +119,7 @@ export default function AccueilTypedeviandeLivraison() {
           <div className={classes.content}>
             <img src={Fullchicken} alt="" className={classes.image} />
             <Link to="/AccueilParties">
-            <button className={classes.buttontext}>Viande de Poulet</button>
+              <button className={classes.buttontext}>Viande de Poulet</button>
             </Link>
           </div>
         </Card>
@@ -129,10 +130,12 @@ export default function AccueilTypedeviandeLivraison() {
             <button className={classes.buttontext}>Viande de Lapin</button>
           </div>
         </Card>
-        <Link to="/Livraison">
-        <button className={classes.buttonlabel}>Je simule un devis</button>
-        </Link>
       </div>
+      <br></br>
+      <br></br>
+      <Link to="/Livraison">
+        <JeSimuleUnDevis />
+      </Link>
     </div>
   );
 }
