@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import '../index.css'
 
+
+
 const useStyles = makeStyles({
   container: {
     boxSizing: 'border-box',
@@ -86,8 +88,23 @@ const ProductCard = ({ imageUrl, productName }) => {
       background: '#CDDFEB',
       color: '#045E98',
     },
+
+  
+
   };
 
+
+
+
+
+
+
+
+
+
+
+
+  
   return (
     <div className={classes.container}>
       <div className={classes.imageContainer}>
