@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Continuer from "../components/Continuer";
+import CommençonsLesAchats from "../components/CommençonsLesAchats";
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles (() => ({
@@ -47,9 +47,7 @@ export default function Welcome() {
 
   return (
     <div className={styles.layout}>
-      <Typography className={styles.productname}>
-        Bienvenue!
-      </Typography>
+      <Typography className={styles.productname}>Bienvenue!</Typography>
       <Typography className={styles.productdescription}>
         Inscription réussie ! Préparez-vous à choisir les meilleures
       </Typography>
@@ -59,7 +57,7 @@ export default function Welcome() {
       <br></br>
       <br></br>
       <Link to="/AccueilTypedeviande">
-      <Continuer/>
+        <CommençonsLesAchats />
       </Link>
     </div>
   );
