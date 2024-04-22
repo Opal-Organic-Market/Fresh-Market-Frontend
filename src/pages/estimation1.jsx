@@ -6,6 +6,7 @@ import Poulet from "../assets/images/Poulet.jpg";
 import Poulet2 from "../assets/images/poulet2.png";
 import Payer from "../components/Payer";
 import ArrowBack from "@material-ui/icons/ArrowBack";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -138,7 +139,9 @@ export default function Estimation1() {
       <div className={styles.priceContainer}>
         <Typography className={styles.cefav}>31 500 Fcfa</Typography>
         <div className={styles.payerContainer}>
-          <Payer className={styles.payer} />
+          <Link to="/estimation2">
+            <Payer className={styles.payer} />
+          </Link>
         </div>
       </div>
     </div>
