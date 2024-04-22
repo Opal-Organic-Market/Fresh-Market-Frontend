@@ -42,7 +42,7 @@ const useStyles = makeStyles({
     alignItems: 'flex-start',
     padding: '8px',
     gap: '4px',
-    width: '147px',
+    width: '90%',
     height: '35px',
     borderRadius: '24px',
   },

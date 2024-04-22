@@ -24,6 +24,7 @@ const useStyles = makeStyles({
     lineHeight: '20px',
     textAlign: 'center',
     color: '#045E98',
+    textTransform: 'none'
   },
 });
 

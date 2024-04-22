@@ -46,7 +46,7 @@ const useStyles = makeStyles({
     color: '#FFFFFF',
   },
   button: {
-    width: 134,
+    width: '100%',
     height: 35,
     borderRadius: 24,
     padding: '14px 24px',
@@ -62,6 +62,7 @@ const useStyles = makeStyles({
     lineHeight: '20px',
     textAlign: 'center',
     marginTop: 'auto',
+    textTransform: 'none !important'
   },
   imageContainer: {
     width: '100%',

@@ -8,10 +8,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 import '../index.css'
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    position: 'fixed',
+    width: '100%',
+    bottom: 0,
+  },
   root: {
     width: '100%',
-    position: 'fixed',
-    bottom: 0,
     borderTop: '1px solid #EAEAEA',
     background: '#FFFFFF',
   },
@@ -39,29 +44,31 @@ export default function BottomNav() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      showLabels
-      className={classes.root}
-    >
-      <BottomNavigationAction
-        label="Accueil"
-        icon={<HomeIcon className={classes.icon} />}
-        classes={{ selected: classes.selected, label: classes.label }}
-      />
-      <BottomNavigationAction
-        label="Historique"
-        icon={<DateRangeIcon className={classes.icon} />}
-        classes={{ selected: classes.selected, label: classes.label }}
-      />
-      <BottomNavigationAction
-        label="Menu"
-        icon={<MenuIcon className={classes.icon} />}
-        classes={{ selected: classes.selected, label: classes.label }}
-      />
-    </BottomNavigation>
+    <div className={classes.container}>
+      <BottomNavigation
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        showLabels
+        className={classes.root}
+      >
+        <BottomNavigationAction
+          label="Accueil"
+          icon={<HomeIcon className={classes.icon} />}
+          classes={{ selected: classes.selected, label: classes.label }}
+        />
+        <BottomNavigationAction
+          label="Historique"
+          icon={<DateRangeIcon className={classes.icon} />}
+          classes={{ selected: classes.selected, label: classes.label }}
+        />
+        <BottomNavigationAction
+          label="Menu"
+          icon={<MenuIcon className={classes.icon} />}
+          classes={{ selected: classes.selected, label: classes.label }}
+        />
+      </BottomNavigation>
+    </div>
   );
 }
