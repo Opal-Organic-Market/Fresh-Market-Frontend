@@ -5,6 +5,10 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward'; // import the ic
 import '../index.css'
 
 const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   root: {
     display: 'flex',
     flexDirection: 'row',
@@ -27,6 +31,7 @@ const useStyles = makeStyles({
     lineHeight: '100%',
     textAlign: 'center',
     color: '#FFFFFF',
+    textTransform: 'none'
   },
   icon: {
     width: '20px',
@@ -62,16 +67,18 @@ export default function GetStarted() {
   };
 
   return (
-    <Button
-      className={classes.root}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onMouseDown={() => setButtonState('active')}
-      onMouseUp={() => setButtonState('default')}
-      style={buttonStyles[buttonState]}
-    >
-      <span className={classes.label}>Let's get started</span>
-      <ArrowForwardIcon className={classes.icon} />
-    </Button>
+    <div className={classes.container}>
+      <Button
+        className={classes.root}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseDown={() => setButtonState('active')}
+        onMouseUp={() => setButtonState('default')}
+        style={buttonStyles[buttonState]}
+      >
+        <span className={classes.label}>Let's get started</span>
+        <ArrowForwardIcon className={classes.icon} />
+      </Button>
+    </div>
   );
 }

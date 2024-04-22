@@ -4,6 +4,10 @@ import Button from '@material-ui/core/Button';
 import '../index.css'
 
 const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   root: {
     display: 'flex',
     flexDirection: 'row',
@@ -43,13 +47,15 @@ export default function CommençonsLesAchats() {
   };
 
   return (
-    <Button
-      className={classes.root}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={buttonStyles[buttonState]}
-    >
-      Commençons les achats
-    </Button>
+    <div className={classes.container}>
+      <Button
+        className={classes.root}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={buttonStyles[buttonState]}
+      >
+        Commençons les achats
+      </Button>
+    </div>
   );
 }

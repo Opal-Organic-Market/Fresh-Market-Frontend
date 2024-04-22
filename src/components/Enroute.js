@@ -8,35 +8,41 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    padding: 0,
-    width: '100%', // make width responsive
-    height: 94,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '10px',
+    width: '80%', // Set width to 90%
+    margin: 'auto', // Center the container
+    height: '94px',
     background: '#CF1B26',
     borderRadius: '10px 10px 0 0',
     [theme.breakpoints.up('sm')]: {
-      width: 342, // fixed width on larger screens
+      width: '80%', // Set width to 90% for larger screens
     },
   },
   image: {
-    width: '100%',
-    height: 'auto',
+    paddingTop: '10px',
+    paddingBottom: '10px',
+    width: '100%', // Use relative units
+    height: 'auto', // Let the browser set the height based on the image aspect ratio
+    objectFit: 'contain',
     top: 9,
     left: 21,
     gap: 0,
     borderRadius: 4,
     [theme.breakpoints.up('sm')]: {
-      width: 70,
-      height: 70,
+      maxWidth: '200%', // Use max-width to limit the size on larger screens
+      maxHeight: '150%', // Use max-height to limit the size on larger screens
     },
   },
-  productInfo: {
+  
+    productInfo: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    padding: '12px 16px 12px 0px',
+    padding: '12px 16px 12px 10px', // Added padding to the right
     gap: 8,
-    width: '100%',
+    width: '60%',
     height: 94,
     borderRadius: 0,
     [theme.breakpoints.up('sm')]: {
@@ -44,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   productName: {
+    paddingTop: '10px',
     width: '100%',
     height: 20,
     fontFamily: 'Droid Sans',
@@ -68,18 +75,6 @@ const useStyles = makeStyles((theme) => ({
     opacity: 0.9,
     [theme.breakpoints.up('sm')]: {
       width: 214,
-    },
-  },
-  enRouteContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    gap: '4px',
-    width: '100%',
-    height: '16px',
-    [theme.breakpoints.up('sm')]: {
-      width: '214px',
     },
   },
   enRouteText: {
@@ -111,7 +106,7 @@ const Enroute = ({ imageUrl, productName, price }) => {
 
   return (
     <div className={classes.container}>
-      <img src={imageUrl} alt={productName} className={classes.image} style={{width: isSmallScreen ? 50 : 70, height: isSmallScreen ? 50 : 70}}/>
+      <img src={imageUrl} alt={productName} className={classes.image} style={{width: isSmallScreen ? '40%' : '40%', height: 'auto'}}/>
       <div className={classes.productInfo}>
         <span className={classes.productName}>{productName}</span>
         <span className={classes.currentPrice}>{price}</span>
