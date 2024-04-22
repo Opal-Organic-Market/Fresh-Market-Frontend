@@ -13,6 +13,8 @@ import AccueilParties2 from "./pages/parties2";
 import Estimation1 from "./pages/estimation1";
 import Estimation2 from "./pages/estimation2";
 import Estimation3 from "./pages/estimation3";
+import Checkout from "./pages/checkout";
+import Confirmation from "./pages/confirmation";
 
 export default function App() {
   return (
@@ -31,6 +33,8 @@ export default function App() {
         <Route path="/estimation1" element={<Estimation1/>}/>
         <Route path="/estimation2" element={<Estimation2/>}/>
         <Route path="/estimation3" element={<Estimation3/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/confirmation" element={<Confirmation/>}/><Route/>
       </Routes>
     </BrowserRouter>
 
