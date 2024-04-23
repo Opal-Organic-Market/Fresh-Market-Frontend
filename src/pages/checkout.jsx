@@ -40,6 +40,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginBottom: theme.spacing(2), // Adjust margin as needed
   },
+  momologo: {
+    width: "267px",
+    height: "189px",
+    borderRadius: "18px 0px 0px 0px",
+
+  }
 }));
 
 export default function Checkout() {

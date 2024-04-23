@@ -51,6 +51,12 @@ export default function Onboarding3() {
 
   return (
     <div className={classes.page}>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <img src={Porc} alt="logo" className={classes.porc} />
       <br></br>
       <Typography className={classes.productname}>
@@ -58,13 +64,14 @@ export default function Onboarding3() {
       </Typography>
       <br></br>
       <Typography className={classes.text}>
-        Nous prenons soin de vous ! Service de livraison fiable et efficient et service après vente à l'écoute
+        Nous prenons soin de vous ! Service de livraison fiable et efficient et
+        service après vente à l'écoute
       </Typography>
       <br></br>
       <br></br>
       <br></br>
       <Link to="/Welcome">
-      <Continuer/>
+        <Continuer />
       </Link>
     </div>
   );

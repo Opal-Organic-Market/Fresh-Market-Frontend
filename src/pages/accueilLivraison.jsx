@@ -7,6 +7,7 @@ import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
 import JeSimuleUnDevis from "../components/JeSimuleUnDevis";
 import { Link } from 'react-router-dom';
+import { ArrowBack } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -97,6 +98,9 @@ export default function AccueilTypedeviandeLivraison() {
 
   return (
     <div>
+    
+      <br></br>
+      <br></br>
       <img src={Intrologo} alt="" className={classes.logo} />
       <div className={classes.headerlabel}>Livraison en cours ...</div>
       <div className={classes.sectionheader}>Que desirez-vous?</div>

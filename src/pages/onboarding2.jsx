@@ -58,6 +58,14 @@ export default function Onboaring2() {
 
   return (
     <div className={classes.page}>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <img src={Boeuf} alt="Boeuf" className={classes.boeuf} />
       <br></br>
       <Typography className={classes.productname}>
@@ -65,12 +73,13 @@ export default function Onboaring2() {
       </Typography>
       <br></br>
       <Typography className={classes.productdescription}>
-        Aurevoir la calculette ! Donnez-nous le nombre de consommateurs de nos produits et l’appli fera une estimation du coût pour vous.
+        Aurevoir la calculette ! Donnez-nous le nombre de consommateurs de nos
+        produits et l’appli fera une estimation du coût pour vous.
       </Typography>
       <br></br>
       <br></br>
       <Link to="/Onboarding3">
-      <Suivant/>
+        <Suivant />
       </Link>
     </div>
   );

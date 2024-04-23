@@ -98,6 +98,8 @@ export default function AccueilTypedeviande() {
 
   return (
     <div>
+      <br></br>
+      <br></br>
       <img src={Intrologo} alt="" className={classes.logo} />
       <div className={classes.sectionheader}>Que desirez-vous?</div>
       <div className={classes.container}>
@@ -133,7 +135,7 @@ export default function AccueilTypedeviande() {
         <br></br>
       </div>
       <Link to="/AccueilTypedeviandeLivraison">
-        < JeSimuleUnDevis />
+        <JeSimuleUnDevis />
       </Link>
     </div>
   );

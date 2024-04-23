@@ -4,41 +4,47 @@ import { makeStyles } from '@material-ui/core/styles';
 import CommençonsLesAchats from "../components/CommençonsLesAchats";
 import { Link } from 'react-router-dom'
 
-const useStyles = makeStyles (() => ({
+const useStyles = makeStyles((theme) => ({
   layout: {
-    width: '390px',
-    height: '844px',
-    color: '#FFFFFF',
-    margin: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    [theme.breakpoints.down('md')]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up('md')]: {
+      width: "70%",
+      margin: "0 auto"
+    },
+    height: "844px",
+    color: "#FFFFFF",
+    margin: "auto",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
   container: {
-    width: '342px',
-    height: '110px',
-    top: '312px',
-    left: '24px',
-    gap: '16px',
+    width: "342px",
+    height: "110px",
+    top: "312px",
+    left: "24px",
+    gap: "16px",
   },
   productname: {
-    fontFamily: 'Droid Sans',
-    width: '342px',
-    height: '46px',
+    fontFamily: "Droid Sans",
+    width: "342px",
+    height: "46px",
     fontWeight: 700,
-    fontSize: '40px',
-    lineHeight: '46px',
-    textAlign: 'center',
-    color: 'black',
+    fontSize: "40px",
+    lineHeight: "46px",
+    textAlign: "center",
+    color: "black",
   },
   productdescription: {
-    fontFamily: 'Droid Sans',
-    fontSize: '16px',
-    fontWeight: '400',
-    lineHeight: '24px',
-    textAlign: 'center',
-    color: 'black',
+    fontFamily: "Droid Sans",
+    fontSize: "16px",
+    fontWeight: "400",
+    lineHeight: "24px",
+    textAlign: "center",
+    color: "black",
   },
 }));
 
