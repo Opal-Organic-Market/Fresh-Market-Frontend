@@ -7,6 +7,7 @@ import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
 import JeSimuleUnDevis from "../components/JeSimuleUnDevis";
 import { Link } from 'react-router-dom';
+import BottomNav from '../components/BottomNav';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -90,6 +91,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    justifyContent: "center",
   },
 }));
 
@@ -137,6 +139,7 @@ export default function AccueilTypedeviande() {
       <Link to="/AccueilTypedeviandeLivraison">
         <JeSimuleUnDevis />
       </Link>
+      <BottomNav/>
     </div>
   );
 }
