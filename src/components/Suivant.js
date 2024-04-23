@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import '../index.css'
+import '../App.css'
 
 const useStyles = makeStyles({
   root: {
@@ -24,6 +25,11 @@ const useStyles = makeStyles({
     fontSize: '16px',
     lineHeight: '125%',
     textAlign: 'center',
+    textTransform: 'none !important',
+    textDecorationLine: 'none !important',
+    '& *': {
+      textDecoration: 'none',
+    },
   },
 });
 
@@ -65,6 +71,7 @@ export default function Suivant() {
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
       style={buttonStyles[buttonState]}
+      disableRipple
     >
       <span className={classes.label} style={{color: buttonStyles[buttonState].color}}>Suivant</span>
     </Button>

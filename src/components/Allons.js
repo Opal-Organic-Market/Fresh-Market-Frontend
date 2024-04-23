@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import '../index.css'
+import '../App.css'
 
 const useStyles = makeStyles({
   container: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     padding: '0px 16px',
     gap: '8px',
-    width: '90%',
+    width: '342px',
     height: '48px',
     borderRadius: '32px',
   },
