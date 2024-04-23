@@ -9,6 +9,7 @@ import poulet3 from "../assets/images/poulet3.png";
 import AilesButton from "../components/AilesButton";
 import Continuer from "../components/Continuer";
 import { ArrowBack } from "@material-ui/icons";
+import BottomNav from "../components/BottomNav";
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -58,11 +59,12 @@ export default function AccueilParties() {
 
   return (
     <Box className={styles.page} pb={8}>
-      {" "}
       {/* Add padding to the bottom */}
       <br></br>
       <br></br>
-      <ArrowBack />
+      <Link to="/AccueilTypedeviandeLivraison">
+        <ArrowBack />
+      </Link>
       <br></br>
       <br></br>
       <br></br>
@@ -109,6 +111,7 @@ export default function AccueilParties() {
       <br></br>
       <br></br>
       <br></br>
+      <BottomNav />
     </Box>
   );
 }

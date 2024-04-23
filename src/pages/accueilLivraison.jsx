@@ -8,6 +8,7 @@ import Intrologo from '../assets/images/intrologo.jpg';
 import JeSimuleUnDevis from "../components/JeSimuleUnDevis";
 import { Link } from 'react-router-dom';
 import { ArrowBack } from '@material-ui/icons';
+import BottomNav from '../components/BottomNav';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -140,6 +141,7 @@ export default function AccueilTypedeviandeLivraison() {
       <Link to="/Livraison">
         <JeSimuleUnDevis />
       </Link>
+      <BottomNav/>
     </div>
   );
 }
