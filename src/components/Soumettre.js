@@ -2,35 +2,38 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import '../index.css'
+import '../App.css'
 
 const useStyles = makeStyles({
   root: {
-    boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '14px 16px',
-    width: '86px',
-    height: '36px',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
-    borderRadius: '6px',
+    padding: '0px 16px',
+    gap: '8px 24px 8px 24px',
+    width: '120px',
+    height: '42px',
+    borderRadius: '32px',
   },
   label: {
-    width: '54px',
+    width: '83px',
     height: '20px',
     fontFamily: 'Droid Sans',
     fontStyle: 'normal',
-    fontWeight: '400',
-    fontSize: '14px',
+    fontWeight: '700',
+    fontSize: '16px',
     lineHeight: '20px',
     textAlign: 'center',
-    color: '#252425',
-    textTransform: "none"
+    textTransform: 'none !important',
+    textDecorationLine: 'none !important',
+    '& *': {
+      textDecoration: 'none',
+    },
   },
 });
 
-export default function Modifier() {
+export default function Soumettre() {
   const classes = useStyles();
   const [buttonState, setButtonState] = useState('default');
 
@@ -42,23 +45,22 @@ export default function Modifier() {
     setButtonState('default');
   };
 
-  const handleMouseDown = () => {
-    setButtonState('active');
-  };
-
-  const handleMouseUp = () => {
-    setButtonState('default');
+  const handleClick = () => {
+    setButtonState('click');
   };
 
   const buttonStyles = {
     default: {
-      background: '#FFFFFF',
+      background: '#CDDFEB',
+      color: '#045E98',
     },
     hover: {
-      background: '#CDDFEB',
+      background: '#94C4E4',
+      color: '#045E98',
     },
-    active: {
-      background: '#3500A5',
+    click: {
+      background: '#046A72',
+      color: '#FFFFFF',
     },
   };
 
@@ -67,11 +69,11 @@ export default function Modifier() {
       className={classes.root}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
+      onClick={handleClick}
       style={buttonStyles[buttonState]}
+      disableRipple
     >
-      <span className={classes.label}>Modifier</span>
+      <span className={classes.label} style={{color: buttonStyles[buttonState].color}}>Soumettre</span>
     </Button>
   );
 }
