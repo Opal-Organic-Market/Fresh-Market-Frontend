@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
       top: "32px",
       left: "36px",
       gap: "0px",
+      padding: "36px",
     },
     super: {
       fontFamily: "Droid Sans",
@@ -33,6 +34,11 @@ export default function Confirmation() {
     const styles = useStyles ();
   return (
     <div className={styles.page}>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Typography className={styles.super}>Super !</Typography>
       <br></br>
       <br></br>
@@ -40,7 +46,10 @@ export default function Confirmation() {
         Votre commande a été passée et vous recevrez bientôt une confirmation
         d'expédition.
       </Typography>
-      <Continuer/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Continuer />
     </div>
   );
 }
