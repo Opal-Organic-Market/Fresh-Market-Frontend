@@ -72,6 +72,7 @@ export default function Onboaring2() {
         Commandes sur mesure.
       </Typography>
       <br></br>
+      <br></br>
       <Typography className={classes.productdescription}>
         Aurevoir la calculette ! Donnez-nous le nombre de consommateurs de nos
         produits et l’appli fera une estimation du coût pour vous.
