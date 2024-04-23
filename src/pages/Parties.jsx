@@ -8,6 +8,7 @@ import poulet2 from "../assets/images/poulet2.png";
 import poulet3 from "../assets/images/poulet3.png";
 import AilesButton from "../components/AilesButton";
 import Continuer from "../components/Continuer";
+import { ArrowBack } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -56,18 +57,22 @@ export default function AccueilParties() {
   const styles = useStyles();
 
   return (
-    <Box className={styles.page} pb={8}> {/* Add padding to the bottom */}
+    <Box className={styles.page} pb={8}>
+      {" "}
+      {/* Add padding to the bottom */}
       <br></br>
       <br></br>
-      <br></br> 
+      <ArrowBack />
+      <br></br>
+      <br></br>
+      <br></br>
       <Typography className={styles.contentfirst}>
         Je désire du Poulet.
       </Typography>
       <br></br>
-      
-        <Typography className={styles.content}>
-          Quelle partie voulez-vous ?
-        </Typography>
+      <Typography className={styles.content}>
+        Quelle partie voulez-vous ?
+      </Typography>
       <Container className={styles.pouletthighContainer}>
         <div>
           <img src={pouletthigh} alt="" className={styles.pouletImage} />
@@ -99,12 +104,11 @@ export default function AccueilParties() {
       <br></br>
       <br></br>
       <Link to="/AccueilParties2">
-      <Continuer/>
+        <Continuer />
       </Link>
       <br></br>
       <br></br>
       <br></br>
-    
     </Box>
   );
 }

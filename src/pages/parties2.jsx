@@ -8,6 +8,7 @@ import poulet2 from "../assets/images/poulet2.png";
 import poulet3 from "../assets/images/poulet3.png";
 import AilesButton from "../components/AilesButton";
 import Continuer from "../components/Continuer";
+import { ArrowBack } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -57,6 +58,9 @@ export default function AccueilParties2() {
 
   return (
     <Box className={styles.page} pb={8}> {/* Add padding to the bottom */}
+    <br></br>
+    <br></br>
+    <ArrowBack/>
       <br></br>
       <br></br>
       <br></br> 
