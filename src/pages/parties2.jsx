@@ -82,26 +82,8 @@ export default function AccueilParties2() {
           <AilesButton />
           {/* <Typography>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque voluptas quis illum ea dignissimos, sequi deserunt repellat sunt enim</Typography> */}
         </div>
-        {/* <div>
-          <img src={poulet2} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div> */}
-        {/* <div>
-          <img src={pouletthigh} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div> */}
-        {/* <div>
-          <img src={poulet3} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div> */}
-        {/* <div>
-          <img src={poulet2} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div> */}
-        {/* <div>
-          <img src={pouletthigh} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div> */}
+      
+       
       </Container>
       <br></br>
       <br></br>

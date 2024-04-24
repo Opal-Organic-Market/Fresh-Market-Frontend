@@ -69,8 +69,6 @@ export default function AccueilParties() {
         const user = auth.currentUser;
         if (!user) {
           console.log("User is not authenticated");
-          console.log("datacart", user)
-
           return;
         }
 
@@ -84,6 +82,7 @@ export default function AccueilParties() {
           id: doc.id,
           ...doc.data(),
         }));
+
         // Update the cart state
         setCart(cartData);
 
@@ -100,7 +99,8 @@ export default function AccueilParties() {
           const imageUrl = await getDownloadURL(ref(storage, category.image));
           categoryData.push({ ...category, id: doc.id, imageUrl });
         }
-        console.log("datacategory", categoryData);
+
+        console.log("data", categoryData);
         setCategorys(categoryData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -127,7 +127,8 @@ export default function AccueilParties() {
         return;
       }
 
-      const categoryWithUserId = { ...category, userId: user.uid };
+      delete category.id;
+      const categoryWithUserId = { ...category, quantity: 1, userId: user.uid };
       const cartRef = await addDoc(
         collection(db, "addcart"),
         categoryWithUserId
@@ -167,7 +168,7 @@ export default function AccueilParties() {
           <Container className={styles.pouletthighContainer}>
             <div>
               <img src={category.image} alt={category.name} className={styles.pouletImage} />
-              <AilesButton onClick={() => addToCart(category)}> 
+              <AilesButton onClick={addToCart(category)}> 
               {category.name}
               </AilesButton>
             </div>
