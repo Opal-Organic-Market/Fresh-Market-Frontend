@@ -103,7 +103,9 @@ export default function Estimation1() {
       {/* Add padding to the entire page */}
       <br></br>
       <br></br>
-      <ArrowBack />
+      <Link to="/estimation2">
+        <ArrowBack />
+      </Link>
       <br></br>
       <br></br>
       <br></br>
@@ -152,7 +154,7 @@ export default function Estimation1() {
           </Link>
         </div>
       </div>
-      <BottomNav/>
+      <BottomNav />
     </div>
   );
 }
