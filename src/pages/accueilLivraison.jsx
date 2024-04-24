@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Image1 from '../assets/images/Image1.png';
-import Rawmeat from '../assets/images/rawmeat.png';
-import Fullchicken from '../assets/images/fullchicken.png';
+// import Image1 from '../assets/images/Image1.png';
+// import Rawmeat from '../assets/images/rawmeat.png';
+// import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
 import JeSimuleUnDevis from "../components/JeSimuleUnDevis";
 import { Link } from 'react-router-dom';
-import { ArrowBack } from '@material-ui/icons';
-
+import { db, storage, } from '../firebase/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+import { ref, getDownloadURL } from 'firebase/storage';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -96,6 +97,32 @@ const useStyles = makeStyles((theme) => ({
 export default function AccueilTypedeviandeLivraison() {
   const classes = useStyles();
 
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const colRef = collection(db, "product");
+        const snapshot = await getDocs(colRef);
+        const productsData = [];
+
+        for (const doc of snapshot.docs) {
+          const productData = doc.data();
+          const imageUrl = await getDownloadURL(
+            ref(storage, productData.image)
+          );
+          productsData.push({ ...productData, id: doc.id, imageUrl });
+        }
+        console.log("data", productsData);
+        setProducts(productsData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
     
@@ -105,39 +132,23 @@ export default function AccueilTypedeviandeLivraison() {
       <div className={classes.headerlabel}>Livraison en cours ...</div>
       <div className={classes.sectionheader}>Que desirez-vous?</div>
       <div className={classes.container}>
-        <Card className={classes.card}>
-          <div className={classes.content}>
-            <img src={Image1} alt="" className={classes.image} />
-            <button className={classes.buttontext}>Viande de Boeuf</button>
-          </div>
-        </Card>
 
-        <Card className={classes.card}>
+{products.map((product, index) => (
+  <div key={index}>
+<Link to={`/accueilParties?type=${product.name}`}>
+<Card className={classes.card}>
           <div className={classes.content}>
-            <img src={Rawmeat} alt="" className={classes.image} />
-            <button className={classes.buttontext}>Viande de Porc</button>
+            <img src={product.image} alt={product.name} className={classes.image} />
+            <button className={classes.buttontext}>{product.name}</button>
           </div>
         </Card>
-
-        <Card className={classes.card}>
-          <div className={classes.content}>
-            <img src={Fullchicken} alt="" className={classes.image} />
-            <Link to="/AccueilParties">
-              <button className={classes.buttontext}>Viande de Poulet</button>
-            </Link>
-          </div>
-        </Card>
-
-        <Card className={classes.card}>
-          <div className={classes.content}>
-            <img src={Image1} alt="" className={classes.image} />
-            <button className={classes.buttontext}>Viande de Lapin</button>
-          </div>
-        </Card>
+</Link>
+  </div>
+))}
       </div>
       <br></br>
       <br></br>
-      <Link to="/Livraison">
+      <Link to="/accueilParties">
         <JeSimuleUnDevis />
       </Link>
     </div>
