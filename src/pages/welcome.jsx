@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   layout: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       width: "100%",
+      padding: "0 20px",
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       width: "70%",
-      margin: "0 auto"
+      margin: "0 auto",
+      paddingLeft: "20px",
     },
     height: "844px",
     color: "#FFFFFF",

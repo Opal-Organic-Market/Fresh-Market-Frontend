@@ -6,6 +6,7 @@ import { Typography, Box } from "@material-ui/core";
 import Modifier from "../components/Modifier";
 import PayerMaintenant from "../components/PayerMaintenant";
 import { Link } from "react-router-dom";
+import Soumettre from "../components/Soumettre";
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -147,6 +148,7 @@ export default function Checkout() {
       <br></br>
       <br></br>
       <Typography className={stlyes.code}>Code Promo</Typography>
+      <Soumettre/>
       <br></br>
       <br></br>
       <Typography className={stlyes.livre}>Livraison</Typography>
