@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { db, auth, storage } from "../firebase/firebase";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
+import { useSearchParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
@@ -13,16 +17,15 @@ import BottomNav from "../components/BottomNav";
 
 const useStyles = makeStyles((theme) => ({
   page: {
-    [theme.breakpoints.down('md')]: {
-      width: "100%"
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       width: "70%",
-      margin: "o auto"
+      margin: "o auto",
     },
     minheight: "100vh",
     background: "#FFFFFF",
-    
   },
   contentfirst: {
     fontFamily: "Droid Sans",
@@ -56,6 +59,90 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AccueilParties() {
   const styles = useStyles();
+  const [searchParams] = useSearchParams();
+  const [categorys, setCategorys] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const user = auth.currentUser;
+        if (!user) {
+          console.log("User is not authenticated");
+          console.log("datacart", user)
+
+          return;
+        }
+
+        // Fetch existing cart items from Firestore
+        const cartQuery = query(
+          collection(db, "addcart"),
+          where("userId", "==", user.uid)
+        );
+        const cartSnapshot = await getDocs(cartQuery);
+        const cartData = cartSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        // Update the cart state
+        setCart(cartData);
+
+        const q = query(
+          collection(db, "category"),
+          where("type", "==", searchParams.get("type"))
+        );
+        const querySnapshot = await getDocs(q);
+
+        const categoryData = [];
+
+        for (const doc of querySnapshot.docs) {
+          const category = doc.data();
+          const imageUrl = await getDownloadURL(ref(storage, category.image));
+          categoryData.push({ ...category, id: doc.id, imageUrl });
+        }
+        console.log("datacategory", categoryData);
+        setCategorys(categoryData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const addToCart = async (category) => {
+    try {
+      const user = auth.currentUser;
+      if (!user) {
+        console.log("User is not authenticated");
+        return;
+      }
+
+      // Check if the item already exists in the cart
+      const itemExists = cart.some((item) => item.id === category.id);
+
+      // If item exists, don't add it again
+      if (itemExists) {
+        console.log("Item already exists in the cart");
+        return;
+      }
+
+      const categoryWithUserId = { ...category, userId: user.uid };
+      const cartRef = await addDoc(
+        collection(db, "addcart"),
+        categoryWithUserId
+      );
+
+      console.log("Document written with ID: ", cartRef.id);
+
+      // Update the cart state using functional form of setCart
+      setCart((prevCart) => [...prevCart, categoryWithUserId]);
+
+      console.log("cart", cart);
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
 
   return (
     <Box className={styles.page} pb={8}>
@@ -75,32 +162,18 @@ export default function AccueilParties() {
       <Typography className={styles.content}>
         Quelle partie voulez-vous ?
       </Typography>
-      <Container className={styles.pouletthighContainer}>
-        <div>
-          <img src={pouletthigh} alt="" className={styles.pouletImage} />
-          <AilesButton />
+      {categorys.map((category, index) => (
+        <div key={index}>
+          <Container className={styles.pouletthighContainer}>
+            <div>
+              <img src={category.image} alt={category.name} className={styles.pouletImage} />
+              <AilesButton onClick={() => addToCart(category)}> 
+              {category.name}
+              </AilesButton>
+            </div>
+          </Container>
         </div>
-        <div>
-          <img src={poulet2} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div>
-        <div>
-          <img src={pouletthigh} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div>
-        <div>
-          <img src={poulet3} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div>
-        <div>
-          <img src={poulet2} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div>
-        <div>
-          <img src={pouletthigh} alt="" className={styles.pouletImage} />
-          <AilesButton />
-        </div>
-      </Container>
+      ))}
       <br></br>
       <br></br>
       <br></br>
