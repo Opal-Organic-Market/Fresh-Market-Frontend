@@ -21,17 +21,19 @@ const useStyles = makeStyles({
     borderRadius: '32px',
   },
   label: {
+    width: '100%', // set width to 100%
+    height: '100%', // set height to 100%
     fontFamily: 'Droid Sans',
-    fontSize: '16px',
+    fontStyle: 'normal',
     fontWeight: '700',
-    lineHeight: '20px',
+    fontSize: '16px',
+    lineHeight: '125%',
     textAlign: 'center',
-    width: '140px',
-    height: '20px',
+    textTransform: 'none'
   },
 });
 
-export default function JeSimuleUnDevis() {
+export default function Continuer2() {
   const classes = useStyles();
   const [buttonState, setButtonState] = useState('default');
 
@@ -45,16 +47,19 @@ export default function JeSimuleUnDevis() {
 
   const buttonStyles = {
     default: {
-      background: '#013438',
-      color: '#FFFFFF',
-      textTransform: 'none',
+      background: '#CDDFEB',
+      color: '#045E98',
     },
     hover: {
-      background: '#025A60',
+      background: '#94C4E4',
+      color: '#045E98',
+    },
+    click: {
+      background: '#046A72',
       color: '#FFFFFF',
-      textTransform: 'none',
     },
   };
+
 
   return (
     <div className={classes.container}>
@@ -64,7 +69,7 @@ export default function JeSimuleUnDevis() {
         onMouseLeave={handleMouseLeave}
         style={buttonStyles[buttonState]}
       >
-        <span className={classes.label}>Je simule un devis</span>
+        <span className={classes.label} style={{color: buttonStyles[buttonState].color, width: buttonStyles[buttonState].width, height: buttonStyles[buttonState].height}}>Continuer</span>
       </Button>
     </div>
   );

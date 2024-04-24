@@ -7,6 +7,8 @@ import Fullchicken from '../assets/images/fullchicken.png';
 import Intrologo from '../assets/images/intrologo.jpg';
 import JeSimuleUnDevis from "../components/JeSimuleUnDevis";
 import { Link } from 'react-router-dom';
+import BottomNav from '../components/BottomNav';
+import { Box } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -91,13 +93,20 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+  bottom: {
+    marginTop: ""
+  },
+  page: {
+  height: "fixed",
+  },
 }));
 
 export default function AccueilTypedeviande() {
   const classes = useStyles();
 
   return (
-    <div>
+    <Box>
+      <typography className={classes.page}></typography>
       <br></br>
       <br></br>
       <img src={Intrologo} alt="" className={classes.logo} />
@@ -131,12 +140,11 @@ export default function AccueilTypedeviande() {
           </div>
         </Card>
         <br></br>
-        <br></br>
-        <br></br>
       </div>
       <Link to="/AccueilTypedeviandeLivraison">
         <JeSimuleUnDevis />
       </Link>
-    </div>
+      <BottomNav />
+    </Box>
   );
 }

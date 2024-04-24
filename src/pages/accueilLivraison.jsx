@@ -7,9 +7,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import Intrologo from '../assets/images/intrologo.jpg';
 import JeSimuleUnDevis from "../components/JeSimuleUnDevis";
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { db, storage, } from '../firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { ref, getDownloadURL } from 'firebase/storage';
+=======
+import { ArrowBack } from '@material-ui/icons';
+import BottomNav from '../components/BottomNav';
+
+>>>>>>> develop
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -151,6 +157,7 @@ export default function AccueilTypedeviandeLivraison() {
       <Link to="/accueilParties">
         <JeSimuleUnDevis />
       </Link>
+      <BottomNav/>
     </div>
   );
 }

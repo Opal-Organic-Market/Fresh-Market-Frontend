@@ -17,11 +17,19 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
+import BottomNav from "../components/BottomNav";
 
 const useStyles = makeStyles((theme) => ({
   page: {
-    width: "100%",
-    height: "844vh",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+      padding: "0 20px",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "70%",
+      margin: "0 auto",
+    },
+    minHeight: "100vh",
     padding: "20px 20px", // Add padding to the entire page
     display: "flex",
     flexDirection: "column",
@@ -209,7 +217,9 @@ export default function Estimation1() {
       {/* Add padding to the entire page */}
       <br></br>
       <br></br>
-      <ArrowBack />
+      <Link to="/AccueilParties2">
+        <ArrowBack />
+      </Link>
       <br></br>
       <br></br>
       <br></br>
@@ -258,6 +268,7 @@ export default function Estimation1() {
           </Link>
         </div>
       </div>
+      <BottomNav/>
     </div>
   );
 }

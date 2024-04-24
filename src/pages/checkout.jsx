@@ -4,6 +4,8 @@ import { makeStyles } from "@material-ui/core";
 import Momologo from "../assets/images/momologo.png";
 import { Typography, Box } from "@material-ui/core";
 import Modifier from "../components/Modifier";
+import PayerMaintenant from "../components/PayerMaintenant";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -18,12 +20,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     justifyContent: "center",
     margin: "auto",
-    padding: "",
+    padding: "30px",
   },
   paymentHeader: {
     display: "flex",
     alignItems: "center",
-    marginBottom: theme.spacing(1), // Adjust margin as needed
+    marginBottom: theme.spacing(1), 
+// Adjust margin as needed
   },
   paymentTitle: {
     fontFamily: "Droid Sans",
@@ -32,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "25px",
     textAlign: "left",
     color: "#045E98",
-    marginLeft: theme.spacing(10), // Add margin between ArrowBack and text
+    marginLeft: theme.spacing(14), // Add margin between ArrowBack and text
   },
   // Additional style for Modifier and Method de paiement
   methodAndModifierContainer: {
@@ -44,6 +47,65 @@ const useStyles = makeStyles((theme) => ({
     width: "267px",
     height: "189px",
     borderRadius: "18px 0px 0px 0px",
+  },
+  address: {
+    fontFamily: "Droid Sans",
+    fontSize: "20px",
+    fontWeight: "700",
+    lineHeight: "25px",
+    textAlign: "left",
+  },
+  hotel: {
+    fontFamily: "Inter",
+    fontSize: "16px",
+    fontWeight: "600",
+    lineHeight: "20px",
+    textAlign: "left",
+  },
+  bp: {
+    width: "342px",
+    fontFamily: "Inter",
+    fontSize: "16px",
+    fontWeight: "400",
+    lineHeight: "20px",
+    textAlign: "left",
+  },
+  code: {
+    fontamFily: "Inter",
+    fontSize: "14px",
+    fontWeight: "500",
+    lineHeight: "14px",
+    textAlign: "left",
+    color: "#8B8B8B",
+  },
+  livre: {
+    fontFamily: "Inter",
+    fontSize: "14px",
+    fontWeight: "600",
+    lineHeight: "14px",
+    textAlign: "left",
+  },
+  fcfa: {
+    fontFamily: "Droid Sans",
+    fontSize: "16px",
+    fontWeight: "400",
+    lineHeight: "24px",
+    textAlign: "right",
+    color: "#CF1B26",
+  },
+  total: {
+    fontFamily: "Inter",
+    fontSize: "20px",
+    fontWeight: "600",
+    lineHeight: "20px",
+    textAlign: "left",
+  },
+  fcc: {
+    fontFamily: "Droid Sans",
+    fontSize: "28px",
+    fontWeight: "700",
+    lineHeight: "28px",
+    textAlign: "right",
 
   }
 }));
@@ -66,12 +128,36 @@ export default function Checkout() {
       </Box>
       <br></br>
       <img className={stlyes.momologo} src={Momologo} alt="" />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Typography className={stlyes.address}>Adresse</Typography>
-      <Typography>Hotel Bano Palace</Typography>
-      <Typography>BP 353, Tsinga Yaoundé, Cameroun</Typography>
-      <Typography>Code Promo</Typography>
-      <Typography>Livraison</Typography>
-      <Typography>Total</Typography>
+      <Modifier />
+      <Typography className={stlyes.hotel}>Hotel Bano Palace</Typography>
+      <br></br>
+      <Typography className={stlyes.bp}>
+        BP 353, Tsinga Yaoundé, Cameroun
+      </Typography>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Typography className={stlyes.code}>Code Promo</Typography>
+      <br></br>
+      <br></br>
+      <Typography className={stlyes.livre}>Livraison</Typography>
+      <Typography className={stlyes.fcfa}>1 500 FCFA</Typography>
+      <Typography className={stlyes.total}>Total</Typography>
+      <Typography className={stlyes.fcc}>33 000 FCFA</Typography>
+      <br></br>
+      <br></br>
+      <Link to="/confirmation">
+        <PayerMaintenant />
+      </Link>
     </div>
   );
 }

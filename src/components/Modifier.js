@@ -26,6 +26,7 @@ const useStyles = makeStyles({
     lineHeight: '20px',
     textAlign: 'center',
     color: '#252425',
+    textTransform: "none"
   },
 });
 

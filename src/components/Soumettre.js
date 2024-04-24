@@ -8,26 +8,32 @@ const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    padding: '8px',
-    gap: '4px',
-    width: '147px',
-    height: '35px',
-    borderRadius: '24px',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '0px 16px',
+    gap: '8px 24px 8px 24px',
+    width: '120px',
+    height: '42px',
+    borderRadius: '32px',
   },
   label: {
-    width: '131px',
-    height: '19px',
+    width: '83px',
+    height: '20px',
     fontFamily: 'Droid Sans',
     fontStyle: 'normal',
     fontWeight: '700',
-    fontSize: '15px',
-    lineHeight: '125%',
+    fontSize: '16px',
+    lineHeight: '20px',
     textAlign: 'center',
+    textTransform: 'none !important',
+    textDecorationLine: 'none !important',
+    '& *': {
+      textDecoration: 'none',
+    },
   },
 });
 
-export default function DynamicButton({ name }) {
+export default function Soumettre() {
   const classes = useStyles();
   const [buttonState, setButtonState] = useState('default');
 
@@ -45,16 +51,16 @@ export default function DynamicButton({ name }) {
 
   const buttonStyles = {
     default: {
-      background: '#CF1B26',
-      color: '#FFFFFF',
-    },
-    hover: {
-      background: '#E73843',
-      color: '#FFFFFF',
-    },
-    click: {
       background: '#CDDFEB',
       color: '#045E98',
+    },
+    hover: {
+      background: '#94C4E4',
+      color: '#045E98',
+    },
+    click: {
+      background: '#046A72',
+      color: '#FFFFFF',
     },
   };
 
@@ -65,8 +71,9 @@ export default function DynamicButton({ name }) {
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
       style={buttonStyles[buttonState]}
+      disableRipple
     >
-      <span className={classes.label} style={{color: buttonStyles[buttonState].color}}>{name}</span>
+      <span className={classes.label} style={{color: buttonStyles[buttonState].color}}>Soumettre</span>
     </Button>
   );
 }
