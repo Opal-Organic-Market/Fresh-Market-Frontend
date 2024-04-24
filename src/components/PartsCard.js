@@ -52,7 +52,7 @@ const useStyles = makeStyles({
     padding: '14px 24px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center', // Change this line
+    justifyContent: 'center',
     alignItems: 'center',
     gap: 12,
     fontFamily: 'Droid Sans',
@@ -62,8 +62,9 @@ const useStyles = makeStyles({
     lineHeight: '20px',
     textAlign: 'center',
     marginTop: 'auto',
-    textTransform: 'none !important'
-  },
+    textTransform: 'none !important',
+    whiteSpace: 'nowrap' // Add this line
+},
   imageContainer: {
     width: '100%',
     height: '100%',
