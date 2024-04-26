@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   },
 });
 
-const AilesButton = () => {
+const AilesButton = (name) => {
   const classes = useStyles();
   const [state, setState] = useState('default');
 
@@ -69,10 +69,11 @@ const AilesButton = () => {
       buttonClass = classes.default;
   }
 
+
   return (
     <animated.div style={props}>
       <Button onClick={handleClick} className={`${classes.button} ${buttonClass}`} endIcon={endIcon}>
-        Ailes
+       {name.children}
       </Button>
     </animated.div>
   );

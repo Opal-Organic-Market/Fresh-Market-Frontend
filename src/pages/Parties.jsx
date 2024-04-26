@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { db, auth, storage } from "../firebase/firebase";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
+import { useSearchParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
@@ -54,6 +58,91 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AccueilParties() {
   const styles = useStyles();
+  const [searchParams] = useSearchParams();
+  const [categorys, setCategorys] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const user = auth.currentUser;
+        if (!user) {
+          console.log("User is not authenticated");
+          return;
+        }
+
+        // Fetch existing cart items from Firestore
+        const cartQuery = query(
+          collection(db, "addcart"),
+          where("userId", "==", user.uid)
+        );
+        const cartSnapshot = await getDocs(cartQuery);
+        const cartData = cartSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        // Update the cart state
+        setCart(cartData);
+
+        const q = query(
+          collection(db, "category"),
+          where("type", "==", searchParams.get("type"))
+        );
+        const querySnapshot = await getDocs(q);
+
+        const categoryData = [];
+
+        for (const doc of querySnapshot.docs) {
+          const category = doc.data();
+          const imageUrl = await getDownloadURL(ref(storage, category.image));
+          categoryData.push({ ...category, id: doc.id, imageUrl });
+        }
+
+        console.log("data", categoryData);
+        setCategorys(categoryData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const addToCart = async (category) => {
+    try {
+      const user = auth.currentUser;
+      if (!user) {
+        console.log("User is not authenticated");
+        return;
+      }
+
+      // Check if the item already exists in the cart
+      const itemExists = cart.some((item) => item.id === category.id);
+
+      // If item exists, don't add it again
+      if (itemExists) {
+        console.log("Item already exists in the cart");
+        return;
+      }
+
+      delete category.id;
+      const categoryWithUserId = { ...category, quantity: 1, userId: user.uid };
+      const cartRef = await addDoc(
+        collection(db, "addcart"),
+        categoryWithUserId
+      );
+
+      console.log("Document written with ID: ", cartRef.id);
+
+      // Update the cart state using functional form of setCart
+      setCart((prevCart) => [...prevCart, categoryWithUserId]);
+
+      console.log("cart", cart);
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
 
   return (
     <Box className={styles.page} pb={8}>

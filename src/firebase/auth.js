@@ -21,7 +21,7 @@ export const doSignInWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
   const result = await signInWithPopup(auth, provider);
   const user = result.user;
-  console.log('ughgy',user);
+  console.log('user',user);
 
   // add user to firestore
 };
@@ -41,6 +41,6 @@ export const doPasswordChange = (password) => {
 
 export const doSendEmailVerification = () => {
   return sendEmailVerification(auth.currentUser, {
-    url: `${window.location.origin}/home`,
+    url: `${window.location.origin}/intro`,
   });
 };

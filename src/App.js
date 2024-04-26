@@ -1,5 +1,8 @@
+import React from "react";
+import { useRoutes } from "react-router-dom";
+import { AuthProvider } from "./context/authcontext";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Onboarding1 from "./pages/onboarding1";
 import Onboarding2 from "./pages/onboarding2";
 import Onboarding3 from "./pages/onboarding3";
 import Welcome from "./pages/welcome";
@@ -14,6 +17,9 @@ import Estimation2 from "./pages/estimation2";
 import Estimation3 from "./pages/estimation3";
 import Checkout from "./pages/checkout";
 import Confirmation from "./pages/confirmation";
+import Login from "./auth/login";
+import Register from "./auth/register";
+import Header from "./header";
 
 export default function App() {
   return (
@@ -36,6 +42,14 @@ export default function App() {
       </Routes>
     </BrowserRouter>
 
+  const routeResult = useRoutes(routesArray);
+
+  return (
+    <AuthProvider>
+      <Header/>
+      <div>{routeResult}</div>
+    </AuthProvider>
   );
 }
 
+export default App;

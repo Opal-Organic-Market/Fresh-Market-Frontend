@@ -5,6 +5,7 @@ import Logo from '../assets/images/intrologo.jpg';
 import { Link } from 'react-router-dom';
 import Allons from '../components/Allons';
 
+
 const useStyles = makeStyles((theme) => ({
   page: {
     [theme.breakpoints.down('md')]: {

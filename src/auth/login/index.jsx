@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Navigate, Link } from 'react-router-dom'
-import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../../../firebase/auth'
-import { useAuth } from '../../../contexts/authContext'
+import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../../firebase/auth'
+import { useAuth } from '../../context/authcontext'
 
 const Login = () => {
     const { userLoggedIn } = useAuth()
@@ -32,7 +32,7 @@ const Login = () => {
 
     return (
         <div>
-            {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
+            {userLoggedIn && (<Navigate to={'/intro'} replace={true} />)}
 
             <main className="w-full h-screen flex self-center place-content-center place-items-center">
                 <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
