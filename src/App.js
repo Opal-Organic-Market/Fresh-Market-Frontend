@@ -9,7 +9,7 @@ import Welcome from "./pages/welcome";
 import AccueilTypedeviande from "./pages/accueil";
 import AccueilTypedeviandeLivraison from "./pages/accueilLivraison";
 import Intro from "./pages/intro";
-import Livraison from "./pages/Livrais";
+import Onboarding1 from "./pages/onboarding1";
 import AccueilParties from "./pages/Parties";
 import AccueilParties2 from "./pages/parties2";
 import Estimation1 from "./pages/estimation1";
@@ -21,29 +21,26 @@ import Login from "./auth/login";
 import Register from "./auth/register";
 import Header from "./header";
 
-function App() {
-  const routesArray = [
-    { path: "/login", element: <Login /> },
-    { path: "/register", element: <Register /> },
-    { path: "/intro", element: <Intro /> },
-    { path: "/onboarding1", element: <Onboarding1 /> },
-    { path: "/onboarding2", element: <Onboarding2 /> },
-    { path: "/onboarding3", element: <Onboarding3 /> },
-    { path: "/welcome", element: <Welcome /> },
-    { path: "/accueiltypedeviande", element: <AccueilTypedeviande /> },
-    {
-      path: "/accueilTypedeviandeLivraison",
-      element: <AccueilTypedeviandeLivraison />,
-    },
-    { path: "/livraison", element: <Livraison /> },
-    { path: "/accueilParties", element: <AccueilParties /> },
-    { path: "/accueilParties2", element: <AccueilParties2 /> },
-    { path: "/estimation1", element: <Estimation1 /> },
-    { path: "/estimation2", element: <Estimation2 /> },
-    { path: "/estimation3", element: <Estimation3 /> },
-    { path: "/checkout", element: <Checkout /> },
-    { path: "/confirmation", element: <Confirmation /> },
-  ];
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/onboarding1" element={<Onboarding1 />} />
+        <Route path="/onboarding2" element={<Onboarding2 />} />
+        <Route path="/onboarding3" element={<Onboarding3 />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/accueiltypedeviande" element={<AccueilTypedeviande />} />
+        <Route path="/accueilTypedeviandeLivraison" element={<AccueilTypedeviandeLivraison />} />
+        <Route path="/accueilParties" element={<AccueilParties/>} />
+        <Route path="/accueilParties2" element={<AccueilParties2/>} />
+        <Route path="/estimation1" element={<Estimation1/>}/>
+        <Route path="/estimation2" element={<Estimation2/>}/>
+        <Route path="/estimation3" element={<Estimation3/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/confirmation" element={<Confirmation/>}/><Route/>
+      </Routes>
+    </BrowserRouter>
 
   const routeResult = useRoutes(routesArray);
 

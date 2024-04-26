@@ -15,12 +15,15 @@ const useStyles = makeStyles((theme) => ({
   container: {
     [theme.breakpoints.down("md")]: {
       width: "100%",
+      padding: "0 60px",
     },
     [theme.breakpoints.up("md")]: {
       width: "70%",
+      paddingLeft: "10px",
     },
     [theme.breakpoints.up("lg")]: {
       width: "100%",
+      paddingLeft: "10px",
     },
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
@@ -30,9 +33,14 @@ const useStyles = makeStyles((theme) => ({
   card: {
     width: "120px",
     minheight: "100vh",
-    borderRadius: "8px",
+    boder: "1px",
+    borderRadius: "4px",
     padding: "10px",
     paddingBottom: "25px",
+    gap: "8px",
+    radius: "10px",
+    
+    
   },
   content: {
     display: "flex",
@@ -48,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionheader: {
     textAlign: "left",
-    margin: "20px",
+    margin: "25px",
     width: "Fixed 390px",
     height: "30px",
     padding: "0px 24px 0px 24px",
@@ -141,6 +149,9 @@ export default function AccueilTypedeviande() {
         </Card>
         <br></br>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
       <Link to="/AccueilTypedeviandeLivraison">
         <JeSimuleUnDevis />
       </Link>

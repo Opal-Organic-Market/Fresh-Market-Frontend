@@ -4,25 +4,23 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { Container, Box } from "@material-ui/core";
 import pouletthigh from "../assets/images/pouletthigh.png";
+import poulet from "../assets/images/Poulet.jpg";
 import poulet2 from "../assets/images/poulet2.png";
 import poulet3 from "../assets/images/poulet3.png";
-import AilesButton from "../components/AilesButton";
 import Continuer from "../components/Continuer";
-import { ArrowBack } from "@mui/icons-material";
-import BottomNav from "../components/BottomNav";
+import PartsCard from "../components/PartsCard"; // Import the PartsCard component
 
 const useStyles = makeStyles((theme) => ({
   page: {
-    [theme.breakpoints.down('md')]: {
-      width: "100%"
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       width: "70%",
-      margin: "o auto"
+      margin: "o auto",
     },
     minheight: "100vh",
     background: "#FFFFFF",
-    
   },
   contentfirst: {
     fontFamily: "Droid Sans",
@@ -59,13 +57,6 @@ export default function AccueilParties2() {
 
   return (
     <Box className={styles.page} pb={8}>
-      {" "}
-      {/* Add padding to the bottom */}
-      <br></br>
-      <br></br>
-      <Link to="/AccueilParties">
-        <ArrowBack />
-      </Link>
       <br></br>
       <br></br>
       <br></br>
@@ -73,17 +64,17 @@ export default function AccueilParties2() {
         Je désire du Poulet.
       </Typography>
       <br></br>
+
       <Typography className={styles.content}>
         Quelle partie voulez-vous ?
       </Typography>
       <Container className={styles.pouletthighContainer}>
-        <div>
-          <img src={pouletthigh} alt="" className={styles.pouletImage} />
-          <AilesButton />
-          {/* <Typography>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque voluptas quis illum ea dignissimos, sequi deserunt repellat sunt enim</Typography> */}
-        </div>
-      
-       
+        <PartsCard imageUrl={poulet} productName="Ailes " />
+        <PartsCard imageUrl={poulet2} productName="Haut des cuisses " />
+        <PartsCard imageUrl={pouletthigh} productName="Pilon" />
+        <PartsCard imageUrl={poulet3} productName="Poultrine" />
+        <PartsCard imageUrl={poulet2} productName="Haut des cuisses " />
+        <PartsCard imageUrl={pouletthigh} productName="Pilon" />
       </Container>
       <br></br>
       <br></br>
@@ -95,7 +86,6 @@ export default function AccueilParties2() {
       <br></br>
       <br></br>
       <br></br>
-      <BottomNav />
     </Box>
   );
 }

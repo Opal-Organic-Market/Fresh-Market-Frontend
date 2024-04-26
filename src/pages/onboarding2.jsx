@@ -79,6 +79,9 @@ export default function Onboaring2() {
       </Typography>
       <br></br>
       <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Link to="/Onboarding3">
         <Suivant />
       </Link>
