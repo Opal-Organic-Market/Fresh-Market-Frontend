@@ -7,7 +7,6 @@ import AccueilTypedeviande from "./pages/accueil";
 import AccueilTypedeviandeLivraison from "./pages/accueilLivraison";
 import Intro from "./pages/intro";
 import Onboarding1 from "./pages/onboarding1";
-import Livraison from "./pages/Livrais";
 import AccueilParties from "./pages/Parties";
 import AccueilParties2 from "./pages/parties2";
 import Estimation1 from "./pages/estimation1";
@@ -27,7 +26,6 @@ export default function App() {
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/accueiltypedeviande" element={<AccueilTypedeviande />} />
         <Route path="/accueilTypedeviandeLivraison" element={<AccueilTypedeviandeLivraison />} />
-        <Route path="/livraison" element={<Livraison />} />
         <Route path="/accueilParties" element={<AccueilParties/>} />
         <Route path="/accueilParties2" element={<AccueilParties2/>} />
         <Route path="/estimation1" element={<Estimation1/>}/>

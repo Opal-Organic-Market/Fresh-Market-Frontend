@@ -8,12 +8,12 @@ const useStyles = makeStyles((theme) => ({
   layout: {
     [theme.breakpoints.down("md")]: {
       width: "100%",
-      padding: "0 20px",
+      padding: "0 10px",
     },
     [theme.breakpoints.up("md")]: {
       width: "70%",
       margin: "0 auto",
-      paddingLeft: "20px",
+      paddingLeft: "10px",
     },
     height: "844px",
     color: "#FFFFFF",
@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "24px",
     textAlign: "center",
     color: "black",
+    width: "324px",
   },
 }));
 
@@ -56,6 +57,8 @@ export default function Welcome() {
   return (
     <div className={styles.layout}>
       <Typography className={styles.productname}>Bienvenue!</Typography>
+      <br></br>
+      
       <Typography className={styles.productdescription}>
         Inscription réussie ! Préparez-vous à choisir les meilleures
       </Typography>

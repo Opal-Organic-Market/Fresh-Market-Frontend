@@ -70,6 +70,8 @@ export default function Onboarding3() {
       <br></br>
       <br></br>
       <br></br>
+      <br></br>
+      <br></br>
       <Link to="/Welcome">
         <Continuer />
       </Link>

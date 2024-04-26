@@ -9,26 +9,26 @@ const useStyles = makeStyles((theme) => ({
   page: {
     [theme.breakpoints.down("md")]: {
       width: "100%",
-      padding: "0 20px", // Add padding to the sides
+      padding: "0 10px", // Add padding to the sides
     },
     [theme.breakpoints.up("md")]: {
       width: "70%",
       margin: "0 auto",
-      paddingLeft: "20px", // Add padding to the left side
+      paddingLeft: "10px", // Add padding to the left side
     },
     minHeight: "100vh", // 'minHeight' instead of 'minheight'
     display: "flex",
-    flexDirection: "column",                                                   
-    justifyContent: "flex-start", 
-    alignItems: "flex-start", // Align content to the left
+    flexDirection: "column",
+    justifyContent: "center", // Center vertically
+    alignItems: "center", // Center horizontally
   },
   boeuf: {
-    width: "278px", 
-    height: "278px", 
+    width: "278px",
+    height: "278px",
   },
   productname: {
-    width: "342px", 
-    height: "80px", 
+    width: "342px",
+    height: "80px",
     fontWeight: "700",
     fontFamily: "Droid Sans", // Correct property name
     fontSize: "32px",
@@ -63,7 +63,6 @@ export default function Onboarding2() {
 
   return (
     <div className={classes.page}>
-      
       <br></br>
       <br></br>
       <br></br>
@@ -80,6 +79,8 @@ export default function Onboarding2() {
         Fini les tracas de dernière minute ! Passez vos commandes à l’avance
         pour des mariages, événements d’entreprises entre autres.
       </Typography>
+      <br></br>
+      <br></br>
       <br></br>
       <br></br>
       <Link to="/Onboarding2">
